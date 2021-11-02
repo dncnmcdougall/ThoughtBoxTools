@@ -13,8 +13,9 @@ add_executable(read src/read.cpp src/ReadArgs.cpp )
 add_executable(write src/write.cpp src/WriteArgs.cpp)
 
 include_directories(src)
-include_directories(/usr/include)
-link_directories(/usr/lib)
+
+target_link_libraries(lib sqlite3)
+target_link_libraries(lib stdc++fs)
 
 target_link_libraries(read sqlite3)
 target_link_libraries(read stdc++fs)
