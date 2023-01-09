@@ -11,8 +11,10 @@ add_library(lib src/DB.cpp src/Query.cpp src/Arg.cpp src/CliArgs.cpp src/logging
 
 add_executable(read src/read.cpp src/ReadArgs.cpp )
 add_executable(write src/write.cpp src/WriteArgs.cpp)
+add_executable(parse src/parse.cpp)
 
 include_directories(src)
+include_directories(argparse/include)
 
 target_link_libraries(lib sqlite3)
 target_link_libraries(lib stdc++fs)
@@ -24,3 +26,7 @@ target_link_libraries(read lib)
 target_link_libraries(write sqlite3)
 target_link_libraries(write stdc++fs)
 target_link_libraries(write lib)
+
+target_link_libraries(parse sqlite3)
+target_link_libraries(parse stdc++fs)
+target_link_libraries(parse lib)

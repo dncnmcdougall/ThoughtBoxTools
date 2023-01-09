@@ -5,7 +5,7 @@ class Logging
 {
 public:
 
-    enum Level {
+    enum Level:int {
     ERROR=0,
     WARNING=1,
     MESSAGE=2,
@@ -55,6 +55,7 @@ public:
     }
 
     static void setLevel(Level level) { s_level=level; };
+    static Level level() { return s_level; };
 
 private:
     const Level m_level;
@@ -72,3 +73,6 @@ extern Logging message;
 extern Logging debug;
 
 }
+
+std::ostream& operator<<(std::ostream& out, const Logging::Level& level);
+

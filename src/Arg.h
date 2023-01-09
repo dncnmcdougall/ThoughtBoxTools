@@ -5,6 +5,7 @@
 
 class Arg
 {
+
     public: 
     enum status {
     CONTINUE,
@@ -25,7 +26,7 @@ class Arg
     unsigned long int occurences() const;
 
     const std::vector<std::vector<std::string>>& params() const { return m_collectedParams;};
-    std::string longName() const {return m_longName;};
+    std::cats::string longName() const {return m_longName;};
 
     std::string description() const;
     std::string rawDescription() const { return m_desc; };
